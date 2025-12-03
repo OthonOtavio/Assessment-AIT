@@ -130,22 +130,22 @@ int main() {
         "9780062464316", true, "2025-11-01", "A2"));
 
     myLibrary.addBook(new ShelfBook(
-        "Rich Dad Poor Dad", "Robert Kiyosaki",
-        "9781612680194", true, "2025-11-01", "B8"));
+        "Rich Dad, Poor Dad", "Robert Kiyosaki",
+        "9781612680194", true, "2025-11-21", "B8"));
 
     myLibrary.addBook(new ShelfBook(
         "Atomic Habits", "James Clear",
         "9780735211292", true, "2025-11-01", "C1"));
 
     myLibrary.addBook(new OnlineBook(
-        "Sapiens: A Brief History of Humankind", "Yuval Noah Harari",
-        "9780062316097", true, "2025-11-01", "2027-05-23"));
+        "Sapiens - A Brief History of Humankind", "Yuval Noah Harari",
+        "9780062316097", true, "2025-11-21", "2027-05-23"));
 
     myLibrary.addBook(new OnlineBook(
         "Educated", "Tara Westover",
-        "9780399590504", true, "2025-11-01", "2028-01-01"));
+        "9780399590504", true, "2025-11-21", "2028-01-01"));
 
-    cout << "-- Othon's Library System (Task 3) --\n";
+    cout << "-- Othon's Library System --\n";
     string choice;
     string inputId;
 
