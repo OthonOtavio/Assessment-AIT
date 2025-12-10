@@ -70,4 +70,72 @@ int main() {
         }
         else if (choice == "2") {
             cout << "Please enter ISBN to borrow: ";
-            getline(cin,
+            getline(cin, inputId);
+            GeneralBook* b = myLibrary.findBook(inputId);
+            if (b) {
+                b->borrowBook();
+            } else {
+                cout << "Book not found.\n";
+            }
+        }
+        else if (choice == "3") {
+            cout << "Please enter ISBN to return: ";
+            getline(cin, inputId);
+            GeneralBook* b = myLibrary.findBook(inputId);
+            if (b) {
+                b->returnBook();
+            } else {
+                cout << "Book not found.\n";
+            }
+        }
+        else if (choice == "4") {
+            cout << "Please enter ISBN to delete: ";
+            getline(cin, inputId);
+            myLibrary.deleteBook(inputId);
+        }
+        else if (choice == "5") {
+            GeneralBook* asc[3] = { correct3, correct1, correct2 };
+            cout << "\nArray 1 - Ascending order ADDED (before sort):\n";
+            for (int i = 0; i < 3; ++i) {
+                cout << "- " << asc[i]->getTitle() << "\n";
+            }
+            sortByTitleAscending(asc, 3);
+            cout << "Array 1 - After sort (should stay ascending):\n";
+            for (int i = 0; i < 3; ++i) {
+                cout << "- " << asc[i]->getTitle() << "\n";
+            }
+        }
+        else if (choice == "6") {
+            GeneralBook* desc[3] = { correct2, correct1, correct3 };
+            cout << "\nArray 2 - Descending order ADDED (before sort):\n";
+            for (int i = 0; i < 3; ++i) {
+                cout << "- " << desc[i]->getTitle() << "\n";
+            }
+            sortByTitleAscending(desc, 3);
+            cout << "Array 2 - After sort (ascending result):\n";
+            for (int i = 0; i < 3; ++i) {
+                cout << "- " << desc[i]->getTitle() << "\n";
+            }
+        }
+        else if (choice == "7") {
+            GeneralBook* mixed[3] = { correct1, correct2, correct3 };
+            cout << "\nArray 3 - Mixed order ADDED (before sort):\n";
+            for (int i = 0; i < 3; ++i) {
+                cout << "- " << mixed[i]->getTitle() << "\n";
+            }
+            sortByTitleAscending(mixed, 3);
+            cout << "Array 3 - After sort (ascending result):\n";
+            for (int i = 0; i < 3; ++i) {
+                cout << "- " << mixed[i]->getTitle() << "\n";
+            }
+        }
+        else if (choice == "8") {
+            myLibrary.showAllBooks();
+        }
+        else {
+            cout << "Invalid option.\n";
+        }
+    }
+
+    return 0;
+}
